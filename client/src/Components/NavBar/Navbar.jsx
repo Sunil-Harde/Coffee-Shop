@@ -29,7 +29,8 @@ function Navbar() {
                             <li className='text-white hover:text-gray-400 cursor-pointer mt-10 md:mt-0' >Contact</li>
                         </ul>
                         <div className='flex items-center space-x-4'>
-                            <IoMdContact className="fas fa-home text-2xl text-white" onClick={handelLoginPage} />
+                            <IoMdContact className="fas fa-home text-2xl
+                             text-white" onClick={handelLoginPage} />
                             <IoMenu className='md:hidden text-white' onClick={handelNavItems} />
                         </div>
                     </div>
