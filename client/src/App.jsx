@@ -14,6 +14,8 @@ function App() {
     <>
       <div>
         <Login />
+        <Home/>
+     
 
       </div>
 
