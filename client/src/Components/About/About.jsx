@@ -10,7 +10,7 @@ const About = () => {
                     <img
                         src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
                         alt="Coffee Shop"
-                        className="rounded-2xl shadow-lg"
+                        className="rounded-2xl h-full w-full shadow-lg"
                     />
                 </div>
 
