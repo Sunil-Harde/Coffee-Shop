@@ -1,22 +1,48 @@
+<<<<<<< HEAD
 import React, { useContext } from "react";
 import Navbar from "../NavBar/Navbar";
 import { dataApi } from "../../api/Api"
+=======
+import React, { useState, useEffect, useContext } from "react";
+import Navbar from "../NavBar/Navbar";
+import { ApiContext, useApiData } from "../../context/ApiContext";
+import Scroll from "../SubComponents/Scroll";
+
+>>>>>>> b951c0de00d8c33593b4cdbc88d36ad3c824a7ea
 function Home() {
+
+  const apiData = useApiData()
 
   const totalStars = 5;
 
   // console.log(clickImg);
+<<<<<<< HEAD
   
   const data1  = useContext(dataApi);
   
+=======
+
+  const left = () => {
+
+    console.log("Left button clicked");
+
+  }
+  const right = () => {
+
+  }
+
+>>>>>>> b951c0de00d8c33593b4cdbc88d36ad3c824a7ea
   return (
     <div className="bg-gray-900">
       <Navbar />
       <div className="w-full h-screen ">
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b951c0de00d8c33593b4cdbc88d36ad3c824a7ea
         <div className="w-full h-screen flex justify-end items-end ">
-
+            <Scroll  />
         </div>
 
 
@@ -27,6 +53,12 @@ function Home() {
       </div>
       <h1 className=" bg-gray-500 p-5 mt-5 font-bold text-[41px] text-center">Our Coffee</h1>
 
+<<<<<<< HEAD
+=======
+      <div className=" grid grid-cols-1 py-10 px-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 ">
+        {
+           apiData?.data.map((item, id) => (
+>>>>>>> b951c0de00d8c33593b4cdbc88d36ad3c824a7ea
 
       
 

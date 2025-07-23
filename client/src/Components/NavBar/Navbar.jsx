@@ -8,9 +8,6 @@ function Navbar() {
     const [showLogin, setShowLogin] = useState(false)
     const [navColor, setNavColor] = useState(false)
 
-
-
-
     window.addEventListener("scroll", () => {
         if (window.scrollY >= 200) {
             setNavColor(true)
