@@ -2,8 +2,8 @@ import React from "react";
 
 const About = () => {
     return (
-        <div className="bg-gray-900 text-gray-300 min-h-screen py-12 px-4">
-        <h1 className="bg-gray-200 text-gray-900 p-5 mb-9 text-center text-4xl font-bold">About</h1>
+        <div className="bg-gray-900 text-gray-300 min-h-screen py-12 ">
+        <h1 className="bg-gray-500 text-black p-5 mb-9 text-center text-4xl font-bold">About</h1>
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
                 {/* Image */}
                 <div className="md:w-1/2">

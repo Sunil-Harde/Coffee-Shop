@@ -2,13 +2,13 @@ import React from "react";
 
 const Contact = () => {
     return (
-        <div className="min-h-screen bg-gray-900 text-gray-300 p-6">
-        <h1 className="bg-gray-200 text-gray-900 p-5 text-center mb-5 font-bold  text-4xl ">Contact Information's</h1>
-            <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8">
+        <div className="min-h-screen bg-gray-900 text-gray-300 py-6">
+        <h1 className="bg-gray-500 text-gray-900 p-5 text-center mb-5 font-bold  text-4xl ">Contact Information's</h1>
+            <div className="max-w-4xl mx-auto bg-gray-500 rounded-2xl shadow-xl p-8">
                 <h2 className="text-3xl font-bold text-center text-brown-800 mb-4">
                     Contact Us
                 </h2>
-                <p className="text-center text-gray-600 mb-8">
+                <p className="text-center text-gray-100 mb-8">
                     We'd love to hear from you! Whether it's a question about our coffee
                     or feedback on your visit.
                 </p>
@@ -16,34 +16,34 @@ const Contact = () => {
                 <form className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label className="block mb-2 text-sm font-medium text-gray-700">
+                            <label className="block mb-2 text-sm font-medium text-white">
                                 Your Name
                             </label>
                             <input
                                 type="text"
-                                className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-brown-500"
+                                className="w-full p-3 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-brown-500"
                                 placeholder="John Doe"
                             />
                         </div>
                         <div>
-                            <label className="block mb-2 text-sm font-medium text-gray-700">
+                            <label className="block mb-2 text-sm font-medium text-white">
                                 Your Email
                             </label>
                             <input
                                 type="email"
-                                className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-brown-500"
+                                className="w-full p-3 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-brown-500"
                                 placeholder="john@example.com"
                             />
                         </div>
                     </div>
 
                     <div>
-                        <label className="block mb-2 text-sm font-medium text-gray-700">
+                        <label className="block mb-2 text-sm font-medium text-white">
                             Message
                         </label>
                         <textarea
                             rows="5"
-                            className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-brown-500"
+                            className="w-full p-3 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-brown-500"
                             placeholder="Write your message here..."
                         ></textarea>
                     </div>
