@@ -16,7 +16,7 @@ const App=() => {
   return (
     <>
       <div>
-        <Home />
+        <Home /> 
         <About />
         <Contact />
         <Footer />

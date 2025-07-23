@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Navbar from "../NavBar/Navbar";
+import { ApiContext, useApiData } from "../../context/ApiContext";
+import Scroll from "../SubComponents/Scroll";
 
 function Home() {
+
+  const apiData = useApiData()
 
   const totalStars = 5;
 
@@ -10,7 +14,6 @@ function Home() {
   const left = () => {
 
     console.log("Left button clicked");
-
 
   }
   const right = () => {
@@ -22,11 +25,8 @@ function Home() {
       <Navbar />
       <div className="w-full h-screen ">
 
-
-
-
         <div className="w-full h-screen flex justify-end items-end ">
-
+            <Scroll  />
         </div>
 
 
@@ -38,7 +38,8 @@ function Home() {
       <h1 className=" bg-gray-500 p-5 mt-5 font-bold text-[41px] text-center">Our Coffee</h1>
 
       <div className=" grid grid-cols-1 py-10 px-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 ">
-        {data.map((item, id) => (
+        {
+           apiData?.data.map((item, id) => (
 
           <div
             key={id}

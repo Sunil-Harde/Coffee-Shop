@@ -22,12 +22,17 @@ function Api() {
           error
         );
       });
+
   }, []);
+
+   
 
 
   return (
     <div>Api fetch</div>
   )
 }
+
+
 
 export default Api

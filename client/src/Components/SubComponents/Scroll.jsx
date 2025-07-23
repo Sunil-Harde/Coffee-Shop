@@ -1,13 +1,19 @@
-import React from 'react'
-  const [clickImg, setClickImg] = useState();
+import React, { useState } from 'react'
+import { useApiData } from '../../context/ApiContext';
 
 function Scroll() {
+
+    const [clickImg, setClickImg] = useState();
+    console.log(clickImg);
+
+    const apiData = useApiData()
+
     return (
         <div>
             <div className="w-95 scroll-smooth  flex  overflow-x-auto  space-x-5 ">
                 {
 
-                    data.map((item, key) => {
+                    apiData.data.map((item, key) => {
                         return (
                             <div key={key} className=" flex-shrink-0 space-x-1" >
 
