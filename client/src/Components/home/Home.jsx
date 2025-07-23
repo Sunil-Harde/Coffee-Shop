@@ -5,7 +5,7 @@ function Home() {
 
   const totalStars = 5;
 
-  console.log(clickImg);
+  // console.log(clickImg);
 
   const left = () => {
 
