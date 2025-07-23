@@ -7,7 +7,7 @@ function Login() {
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
 
-    const handalSubmit = (e) => {
+    const handelSubmit = (e) => {
         e.preventDefault();
         console.log(username);
         console.log(password);
@@ -25,7 +25,7 @@ function Login() {
             <div className='container mx-auto p-4 bg-red-100 shadow-md rounded-lg mt-10 w-110 mb-10'>
                 <h1 className="text-2xl font-bold mb-4">Login</h1>
                 <p className="mb-4">Please enter your credentials to login.</p>
-                <form className='' onSubmit={handalSubmit}>
+                <form className='' onSubmit={handelSubmit}>
                     <input type="text" placeholder="Username" className="border p-2 rounded mb-4 w-full" onChange={(e) => setUsername(e.target.value)} />
                     <input type="password" placeholder="Password" className="border p-2 rounded mb-4 w-full" onChange={(e) => setPassword(e.target.value)} />
                     <input type="email" placeholder="email" className="border p-2 rounded mb-4 w-full" onChange={(e) => setEmail(e.target.value)} />
