@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import Navbar from "../NavBar/Navbar";
-import { ApiContext, useApiData } from "../../context/ApiContext";
+import { useApiData } from "../../context/ApiContext";
 import Scroll from "../SubComponents/Scroll";
 
 function Home() {
