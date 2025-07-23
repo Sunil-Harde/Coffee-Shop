@@ -1,32 +1,38 @@
+
 import React from 'react'
-  const [clickImg, setClickImg] = useState();
+import { dataApi } from '../../api/Api';
 
 function Scroll() {
+    const [clickImg, setClickImg] = useState();
     return (
+
         <div>
-            <div className="w-95 scroll-smooth  flex  overflow-x-auto  space-x-5 ">
-                {
+            <dataApi className="Consumer">
 
-                    data.map((item, key) => {
-                        return (
-                            <div key={key} className=" flex-shrink-0 space-x-1" >
+                <div className="w-95 scroll-smooth  flex  overflow-x-auto  space-x-5 ">
+                    {
 
-                                <img
-                                    src={item.image}
-                                    alt="homeBackground"
-                                    className=" h-35 w-22 rounded cursor-pointer "
+                        data.map((item, key) => {
+                            return (
+                                <div key={key} className=" flex-shrink-0 space-x-1" >
 
-                                    onClick={() => setClickImg(item.id)}
-                                />
+                                    <img
+                                        src={item.image}
+                                        alt="homeBackground"
+                                        className=" h-35 w-22 rounded cursor-pointer "
+
+                                        onClick={() => setClickImg(item.id)}
+                                    />
+<p>ewrbwejrh</p>
 
 
+                                </div>
+                            )
+                        })
+                    }
 
-                            </div>
-                        )
-                    })
-                }
-
-            </div>
+                </div>
+            </dataApi>
         </div>
     )
 }

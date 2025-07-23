@@ -1,5 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
+import Home from '../Components/home/Home';
 
+
+ export const dataApi = createContext()
 
 function Api() {
 
@@ -26,7 +29,13 @@ function Api() {
 
 
   return (
-    <div>Api fetch</div>
+    <div>
+
+      <dataApi.provider value={{data}}>
+        <Home/>
+      </dataApi.provider>
+
+    </div>
   )
 }
 
