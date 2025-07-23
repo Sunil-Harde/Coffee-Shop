@@ -26,7 +26,7 @@ function Api() {
 
 
   return (
-    <div>Api</div>
+    <div>Api fetch</div>
   )
 }
 
