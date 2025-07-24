@@ -13,6 +13,7 @@ function Scroll() {
         <div className=''>
             <div className="scroleBar w-100  he scroll-smooth  flex  overflow-x-auto space-x-5 mr-15 mb-15">
                 {
+                    
                     apiData.data.map((item, key) => {
                         return (
                             <div key={key} className=" flex-shrink-0 space-x-1" >
