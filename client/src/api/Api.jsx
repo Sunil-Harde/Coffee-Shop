@@ -42,10 +42,5 @@ function Api() {
   )
 }
 
-<<<<<<< HEAD
-export default Api
-=======
-
 
 export default Api
->>>>>>> b951c0de00d8c33593b4cdbc88d36ad3c824a7ea
