@@ -1,77 +1,96 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../NavBar/Navbar";
+import Scroll from "../SubComponents/Scroll/Scroll";
+import Card from "../SubComponents/Card/Card";
 import { useApiData } from "../../context/ApiContext";
-import Scroll from "../SubComponents/Scroll";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+
 
 function Home() {
-
   const apiData = useApiData()
 
-  const totalStars = 5;
 
-  // console.log(clickImg);
+  const [clickImg, setClickImg] = useState(2);
 
   const left = () => {
 
-    console.log("Left button clicked");
+    let leftSlide = clickImg - 1
+
+    if (leftSlide == 0) {
+      leftSlide = apiData.data.length
+    }
+    setClickImg(leftSlide)
 
   }
+
+
   const right = () => {
 
+    let leftSlide = clickImg + 1
+    if (leftSlide == apiData.data.length + 1) {
+      leftSlide = 1
+    }
+    setClickImg(leftSlide)
+
   }
 
-  return (
-    <div className="bg-gray-900">
-      <Navbar />
-      <div className="w-full h-screen ">
+useEffect(() => {
+  const timer = setTimeout(() => {
+    const total = apiData?.data?.length || 0;
 
-        <div className="w-full h-screen flex justify-end items-end ">
-            <Scroll  />
-        </div>
+    if (clickImg >= total) {
+      setClickImg(1); // restart at 1
+      console.log(clickImg)
+    } else {
+      setClickImg(clickImg + 1); // go to next image
+      console.log(clickImg)
+    }
+  }, 5000);
+  return () => clearTimeout(timer); // 🧼 cleanup
+
+}, [clickImg, apiData?.data]);
 
 
-        {/* <button className=" bg-amber-700 absolute top-100  left-10" onClick={left}>hiidfd</button>
-        <button className=" bg-amber-700 absolute top-100 right-10 " onClick={right}>hiidfd</button> */}
+return (
+  <div className="bg-gray-900">
+    <Navbar />
+    <div className="w-full sm:h-screen relative">
 
+      {
 
+        apiData.data.map((item, id) => {
+          return (
+            item.id === clickImg && (
+              <div key={id} className="h-full w-full relative">
+                <img src={item.image} alt={item.name} className="object-cover h-[70vh] rounded-b-2xl  sm:h-full w-full " />
+
+                <div className=" w-75 absolute bottom-15 left-20">
+
+                </div>
+              </div>
+            )
+          )
+        })
+
+      }
+
+      <div className="sm:absolute overflow-x-auto mt-2 sm:right-0 sm:bottom-0 ">
+        <Scroll setClickImg={setClickImg} />
       </div>
-      <h1 className=" bg-gray-500 p-5 mt-5 font-bold text-[41px] text-center">Our Coffee</h1>
 
-      <div className=" grid grid-cols-1 py-10 px-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 ">
-        {
-           apiData?.data.map((item, id) => (
+      <button className=" slider-button absolute top-50 left-2 md:top-70  md:left-10  px-2  py-5 rounded cursor-pointer" onClick={left}><FaAngleLeft /></button>
+      <button className=" slider-button absolute top-50 right-2 md:top-70 md:right-10 px-2  py-5 rounded cursor-pointer" onClick={right}><FaAngleRight /></button>
 
-          <div
-            key={id}
-            className="card  bg-gray-700 shadow-md rounded-lg  m-2 hover:shadow-lg transition-shadow duration-300"
-          >
+    </div>
 
-            <img
-              src={item.image}
-              alt={item.name}
-              className="w-screen h-50 object-cover rounded-t-lg mb-2 "
-            />
-            <h2 className="text-xl font-semibold mb-2 p-2 text-gray-300">
-              {item.title}
-            </h2>
-            <p className="text-gray-400 mb-4 px-2"><b>Description</b> : {item.description}</p>
-            <p className="text-gray-400 mb-4 px-2">
-              <b>Rating</b> :
-              {
-                Array.from({ length: totalStars }, (_, index) => (
-                  <span key={index} className="text-yellow-500 text-xl ">
-                    {index < Math.floor(item.rating.rate) ? "★" : "☆"}
-                  </span>
-                ))
-              }
-              <span> {item.rating.rate}</span>
-            </p>
-            <p className="text-gray-400 mb-4 px-2"> <b>Price</b> : $ {item.price}</p>
-          </div>
-        ))}
-      </div>
-    </div >
-  );
+
+    <h1 className=" bg-gray-500 p-5 mt-5 font-bold text-[41px] text-center">Our Coffee</h1>
+
+
+    <Card />
+
+  </div >
+);
 }
 
 export default Home;
