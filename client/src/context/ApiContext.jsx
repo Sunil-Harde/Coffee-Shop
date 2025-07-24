@@ -9,7 +9,6 @@ export const useApiData = () => {
 
 export const ApiContextProvider = (props) => {
     const [data, setData] = useState([])
-
     const getData = async () => {
         const response = await getCofferDataFromApi()
         setData(response)
@@ -20,8 +19,8 @@ export const ApiContextProvider = (props) => {
     }, []);
 
     return (
-        <ApiContext.Provider value={{ data, setData  }}>
+        <ApiContext.Provider value={{ data, setData }}>
             {props.children}
         </ApiContext.Provider>
     )
-}
+}                   
