@@ -1,25 +1,27 @@
 import React from 'react'
-// import { BrowserRouter as Router } from 'react-router-dom'
-// import { Routes, Route } from 'react-router-dom'
-import Home from './Components/Home/Home'
-import Login from './Components/Login/Login'
-// import Menu from './Components/Menu/Menu'
-// import About from './Components/About/About'
-// import Contact from './Components/Contact/Contact'
-import './App.css'
+import Home from './Components/home/Home'
 import Contact from './Components/Contact/Contact'
 import About from './Components/About/About'
 import Footer from './Components/Footer/Footer'
+import './App.css'
+import Landing from './Components/Landing/Landing'
+
+
+
 
 const App=() => {
 
   return (
     <>
       <div>
+        
+        <Landing /> 
+{/* 
+
         <Home /> 
         <About />
         <Contact />
-        <Footer />
+        <Footer /> */}
       </div>
 
     </>

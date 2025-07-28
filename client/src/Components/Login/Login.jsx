@@ -20,7 +20,7 @@ function Login() {
     }
 
     return (
-        <div className=''>
+        <div className='font-mono'>
             {/* <Navbar /> */}
             <div className='container mx-auto p-4 bg-red-100 shadow-md rounded-lg mt-10 w-110 mb-10'>
                 <h1 className="text-2xl font-bold mb-4">Login</h1>
