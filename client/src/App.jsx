@@ -6,24 +6,17 @@ import Footer from './Components/Footer/Footer'
 import './App.css'
 import Landing from './Components/Landing/Landing'
 
-
-
-
 const App=() => {
-
   return (
     <>
       <div>
-        
         <Landing /> 
 {/* 
-
         <Home /> 
         <About />
         <Contact />
         <Footer /> */}
       </div>
-
     </>
   )
 }
