@@ -24,6 +24,10 @@ function Navbar() {
     const handelLoginPage = () => {
         setShowLogin(!showLogin);
     };
+
+
+    const navItems = ["Home", "Menu", "About", "Contact"]
+
     return (
         <div className=" fixed z-10 w-full">
             <div className="   ">
@@ -44,46 +48,13 @@ function Navbar() {
                             className={`${openNav ? " bg-amber-50 text-amber-30 -mt-400 " : ""
                                 } md:mt-0 block z-10 gap-10 md:gap-5 space-x-4 fixed md:relative right-0 top-15 md:top-2 bg-gray-800 min-h-screen md:min-h-10 md:mr-10 md:h-10 w-40 md:w-0 text-center md:flex transition-all duration-400 ease-in-out`}
                         >
-                            <motion.li
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.9 }}
-                                className=" hover:text-gray-400 cursor-pointer mt-10 md:mt-0"
-                                initial={{ y: -50 }}
-                                animate={{ y: 0 }}
-                                transition={{ delay: 0.3, duration: 1.2 }}
-                            >
-                                Home
-                            </motion.li>
-                            <motion.li
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.9 }}
-                                className=" hover:text-gray-400 cursor-pointer mt-10 md:mt-0"
-                                initial={{ y: -53 }}
-                                animate={{ y: 0 }}
-                                transition={{ delay: 0.3, duration: 1.4 }}
-                            >
-                                Menu
-                            </motion.li>
-                            <motion.li
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.9 }}
-                                className=" hover:text-gray-400 cursor-pointer mt-10 md:mt-0"
-                                initial={{ y: -56 }}
-                                animate={{ y: 0 }}
-                                transition={{ delay: 0.3, duration: 1.6 }}
-                            >
-                                About
-                            </motion.li>
-                            <motion.li
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.9 }}
-                                className=" hover:text-gray-400 cursor-pointer mt-10 md:mt-0"
-                                initial={{ y: -59 }}
-                                animate={{ y: 0 }}
-                                transition={{ delay: 0.3, duration: 1.8 }}
-                            >
-                                Contact
-                            </motion.li>
+                            {
+                                navItems.map((item, id) => {
+
+                                    return <motion.li key={id} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className=" hover:text-gray-400 cursor-pointer mt-10 md:mt-0" initial={{ y: -50 }} animate={{ y: 0 }} transition={{ delay: 0.3 + id * 0.2, duration: 1.2 }}>{item}</motion.li>
+
+                                })
+                            }
                         </ul>
                         <motion.div
                             className="flex items-center space-x-4 z-10"

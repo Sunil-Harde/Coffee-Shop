@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../NavBar/Navbar";
 import Scroll from "../SubComponents/Scroll/Scroll";
 import Card from "../SubComponents/Card/Card";
 import { useApiData } from "../../context/ApiContext";
@@ -54,7 +53,6 @@ function Home() {
 
   return (
     <div className="bg-gray-900">
-      <Navbar />
       <div className="w-full font-mono sm:h-screen relative">
 
         {
