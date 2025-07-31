@@ -1,16 +1,16 @@
 import React from 'react'
 import BlackCoffee from '../../assets/black.png'
 import BgImg from '../../assets/bg-slate.png'
-import HotCoffee from '../../assets/coffee/coffee1.png'
+import  ColdCoffee from '../../assets/coffee/coffee1.png'
+import HotCoffee from '../../assets/coffee/coffee3.png'
 import Navbar from '../NavBar/Navbar'
-import { motion } from 'motion/react'
-
-
-
-
+import { motion  } from 'motion/react'
 
 function Landing() {
-    return (
+
+
+   
+return (
         <>
             <div className='h-screen  bg-red-600'>
                 <Navbar />
@@ -69,30 +69,31 @@ function Landing() {
                 </div>
             </div>
 
-            <section className='h-screen  '>
+            <section className='h-screen '>
                 <div className=''>
                     <div className='flex justify-center items-center flex-col mt-10'>
                         <h1 className='font-bold text-3xl mb-2'>Fresh and <span className='text-amber-500'>Tasty Fruits</span></h1>
-                        <p className='w-100 '>consequatur maxime accusantium natus dolore reiciendis facilis voluptates voluptatibus repudiandae quisquam beatae harum pariatur tempora, totam, illum ipsam porro?</p>
+                        <p className='w-100 text-center'>consequatur maxime beatae harum pariatur tempora, totam, illum ipsam porro?</p>
                     </div>
                     <div className='flex justify-center items-center flex-col mt-10'>
 
                         <div className='grid grid-cols-3 gap-50 mt-10'>
-                            <motion.div className=" h-40 w-50 " >
-                                <motion.img src={HotCoffee} alt="" whileHover={{scale:1.1 }} initial={{y:200, opacity:0}} animate={{y:0, opacity:1}} transition={{delay:0, duration:.6}} />
-                                <h1 className='text-center text-2xl font-bold text-amber-600'>Black Coffee</h1>
+                            <motion.div className=" h-40 w-50  cursor-pointer" >
+                                <motion.img src={HotCoffee} alt="" className=" h-60 w-50 mb-8  " whileHover={{scale:1.1, transition:{ delay:0, duration:0.2}}} initial={{y:200, opacity:0}} animate={{y:0, opacity:1}} transition={{delay:0, duration:.8}} viewport={{once:true, amount:0.5}} />
+                                <h1 className='text-center text-2xl font-bold text-amber-600'>Hot Coffee</h1>
                                 <p>Lorem ipsum dolor sit amet.</p>
                             </motion.div>
-                            <div className=" h-40 w-50 ">
-                                <motion.img src={HotCoffee} alt="" whileHover={{scale:1.1 }} initial={{y:200, opacity:0}} animate={{y:0, opacity:1}} transition={{delay:0, duration:.9}} />
+                            <div className=" h-40 w-50 cursor-pointer ">
+                                <motion.img src={BlackCoffee} alt="" className=" h-60 w-40 ml-4 mb-8  " whileHover={{scale:1.1, transition:{ delay:0, duration:0.2}}} initial={{y:200, opacity:0}} animate={{y:0, opacity:1}} transition={{delay:0.2, duration:1.1}} viewport={{once:true, amount:0.5}} />
                                 <h1 className='text-center text-2xl font-bold text-amber-600'>Black Coffee</h1>
                                 <p>Lorem ipsum dolor sit amet.</p>
                             </div>
-                            <div className=" h-40 w-50 ">
-                                <motion.img src={HotCoffee} alt="" whileHover={{scale:1.1 }} initial={{y:200, opacity:0}} animate={{y:0, opacity:1}} transition={{delay:0, duration:1.2}} />
-                                <h1 className='text-center text-2xl font-bold text-amber-600'>Black Coffee</h1>
+                            <div className=" h-40 w-50 cursor-pointer ">
+                                <motion.img src={ColdCoffee} alt="" className=" h-60 w-50 mb-8  " whileHover={{scale:1.1, transition:{ delay:0, duration:0.2}}} initial={{y:200, opacity:0}} animate={{y:0, opacity:1}} transition={{delay:0.4, duration:1.3}} viewport={{once:true, amount:0.5}} />
+                                <h1 className='text-center text-2xl font-bold text-amber-600'>Cold Coffee</h1>
                                 <p>Lorem ipsum dolor sit amet.</p>
                             </div>
+                            
                         </div>
                     </div>
                 </div>

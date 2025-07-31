@@ -45,20 +45,18 @@ function Navbar() {
                             <span className="text-amber-500">Coffee</span> Shop
                         </motion.div>
                         <ul
-                            className={`${openNav ? " bg-amber-50 text-amber-30 -mt-400 " : ""
-                                } md:mt-0 block z-10 gap-10 md:gap-5 space-x-4 fixed md:relative right-0 top-15 md:top-2 bg-gray-800 min-h-screen md:min-h-10 md:mr-10 md:h-10 w-40 md:w-0 text-center md:flex transition-all duration-400 ease-in-out`}
-                        >
+                            className={`${openNav ? " bg-amber-50 text-amber-30 -mt-400 " : "" } md:mt-0 block z-10 gap-10 md:gap-5 space-x-4 fixed md:relative right-0 top-15 md:top-2 bg-gray-800 min-h-screen md:min-h-10 md:mr-10 md:h-10 w-40 md:w-0 text-center md:flex transition-all duration-400 ease-in-out`}>
                             {
                                 navItems.map((item, id) => {
 
-                                    return <motion.li key={id} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className=" hover:text-gray-400 cursor-pointer mt-10 md:mt-0" initial={{ y: -50 }} animate={{ y: 0 }} transition={{ delay: 0.3 + id * 0.2, duration: 1.2 }}>{item}</motion.li>
+                                    return <motion.li key={id} whileHover={{ scale: 1.1, transition:{delay:0.1, duration:0.3}}} whileTap={{ scale: 0.9 }} className=" hover:text-amber-400 cursor-pointer mt-10 md:mt-0" initial={{ y: -50 }} animate={{ y: 0 }} transition={{ delay: 0.3 + id * 0.2, duration: 1.2 }}>{item}</motion.li>
 
                                 })
                             }
                         </ul>
                         <motion.div
                             className="flex items-center space-x-4 z-10"
-                            whileHover={{ scale: 1.1 }}
+                            whileHover={{ scale: 1.1, }}
                             whileTap={{ scale: 0.9 }}
                             initial={{ y: -62 }}
                             animate={{ y: 0 }}
