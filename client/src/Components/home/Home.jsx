@@ -4,6 +4,7 @@ import Card from "../SubComponents/Card/Card";
 import { useApiData } from "../../context/ApiContext";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { motion } from "motion/react"
+import Loading from "../SubComponents/Loading/Loading";
 
 
 function Home() {
@@ -57,19 +58,28 @@ function Home() {
 
         {
 
-          apiData.data.map((item, id) => {
-            return (
-              item.id === clickImg && (
-                <motion.div key={id} whileTap={{ scale: 0.9 }}  className="h-full w-full relative" >
-                  <img src={item.image} alt={item.name} className="object-cover h-[70vh] rounded-b-2xl  sm:h-full w-full " />
+          apiData.data.length > 0 ? (
 
-                  <div className=" w-75 absolute bottom-15 left-20">
+            apiData.data.map((item, id) => {
+              return (
+                item.id === clickImg && (
+                  <motion.div key={id} whileTap={{ scale: 0.9 }} className="h-full w-full relative" >
+                    <img src={item.image} alt={item.name} className="object-cover h-[70vh] rounded-b-2xl  sm:h-full w-full " />
 
-                  </div>
-                </motion.div>
+                    <div className=" w-75 absolute bottom-15 left-20">
+
+                    </div>
+                  </motion.div>
+                )
               )
-            )
-          })
+            })
+           ) :(
+
+            <div className="h-screen flex justify-center items-center">
+              <Loading/>
+            </div>
+
+           )
         }
 
         <div className="sm:absolute overflow-x-auto mt-2 sm:right-0 sm:bottom-0 transition-all duration-700">
