@@ -9,16 +9,16 @@ import Landing from './Components/Landing/Landing'
 
 
 
-const App=() => {
+const App = () => {
 
   return (
     <>
       <div>
-        
-        <Landing /> 
+
+        <Landing />
 
 
-        <Home /> 
+        <Home />
         <About />
         <Contact />
         <Footer />
